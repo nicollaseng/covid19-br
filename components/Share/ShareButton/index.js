@@ -1,46 +1,17 @@
 import { Container } from './styles';
 import {
-  EmailShareButton,
   FacebookShareButton,
-  InstapaperShareButton,
-  LineShareButton,
-  LinkedinShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  OKShareButton,
-  PinterestShareButton,
-  PocketShareButton,
-  RedditShareButton,
   TelegramShareButton,
-  TumblrShareButton,
   TwitterShareButton,
-  ViberShareButton,
-  VKShareButton,
   WhatsappShareButton,
-  WorkplaceShareButton,
-  EmailIcon,
   FacebookIcon,
-  InstapaperIcon,
-  LineIcon,
-  LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
-  PinterestIcon,
-  PocketIcon,
-  RedditIcon,
   TelegramIcon,
-  TumblrIcon,
   TwitterIcon,
-  ViberIcon,
-  VKIcon,
-  WeiboIcon,
   WhatsappIcon,
-  WorkplaceIcon,
 } from "react-share"
 
 const url = "http://www.covid19-br.com";
-const message = "Saiba se já pode sair de casa";
+const message = "Acompanhe";
 
 const ShareButton = () => {
   return (

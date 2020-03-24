@@ -4,13 +4,22 @@ import axios from 'axios';
 
 import Layout from '../layout';
 import Button from '../components/Button'
+import Loading from "../components/Loading";
 import ShareButton from "../components/Share/ShareButton";
 
-import { Covid, Country, Container, Counters, CounterContainer, ButtonContainer, TitleContainer, CountersContainer, CounterTitle, CounterValue, Image, ImageContainer, ImageTitle, ImageMessage } from '../styles'
+import { Covid, Country, Container, Counters, CounterContainer, ButtonContainer, TitleContainer, CountersContainer, CounterTitle, CounterValue, Image, ImageContainer, ImageTitle, ImageMessage, LoadingContainer, LoadingMessage } from '../styles';
+
+const Loader = () => (
+  <LoadingContainer>
+    <Loading />
+    <LoadingMessage>Verificando....</LoadingMessage>
+  </LoadingContainer>
+)
 
 const Home = () => {
   const [brazil, setBrazil] = useState({});
   const [reveal, setReveal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -22,7 +31,11 @@ const Home = () => {
   };
 
   const handleAction = () => {
-    setReveal(true);
+    setLoading(true);
+    setTimeout(() => {
+      setReveal(true);
+      setLoading(false);
+    }, 1500);
   }
 
   return (
@@ -45,10 +58,10 @@ const Home = () => {
             </CountersContainer>
           </Counters>
         </CounterContainer>
-      {reveal ? (
+      {loading ? <Loader /> : reveal ? (
         <ImageContainer>
           <ImageTitle>Não!</ImageTitle>
-          <Image src="https://media.giphy.com/media/d78vbBA54uHFS/giphy.gif" />
+          <Image src="../static/assets/gif/no.gif" />
           <ImageMessage>Nunca foi tão fácil salvar o mundo, basta apenas ficar em casa! Vamos todos derrotar o coronavírus! =)</ImageMessage>
           <ShareButton />
         </ImageContainer>

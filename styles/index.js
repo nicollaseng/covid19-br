@@ -30,33 +30,34 @@ export const CountersContainer = styled.div`
 `;
 
 export const CounterTitle = styled.span`
-  font-size: 18px;
+  font-size: calc(4px + 2vmin);
   font-weight: 700;
   margin: 10px 5px;
 `;
 
 export const CounterValue = styled.span`
-  font-size: 15px;
+  font-size: calc(4px + 2vmin);
   font-weight: 400;
 `;
 
 export const CounterContainer = styled.div`
   display: flex;
-  flex: 1;
+  flex: 0.9;
   flex-direction: column;
 `;
 
 export const Image = styled.img`
-  width: 320px;
-  height: 250px;
+  width: calc(160px + 10vmin);
+  height: calc(150px + 10vmin);
 `;
 
 export const ImageContainer = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  bottom: 23%;
+  /* position: fixed;
+  top: 30%; */
 `;
 
 export const ImageTitle = styled.span`
@@ -65,6 +66,21 @@ export const ImageTitle = styled.span`
 `;
 
 export const ImageMessage = styled.span`
+  font-size: 15px;
+  margin: 15px 40px;
+  color: grey;
+  text-align: center;
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  /* justify-content: center; */
+`;
+
+export const LoadingMessage = styled.span`
   font-size: 15px;
   margin: 15px 40px;
   color: grey;
