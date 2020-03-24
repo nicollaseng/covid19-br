@@ -24,14 +24,14 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161742939-1"></script>
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161742939-1"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date());
 
           gtag('config', 'UA-161742939-1');
-        </script>
+        </script> */}
           <style jsx global>
             {`
               html,

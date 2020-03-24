@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
 export const ButtonContainer = styled.div`
-  position: fixed;
-  bottom: 50%;
+  display: flex;
+  flex: 1;
+  /* margin-bottom: 50%; */
+  /* flex: 1; */
 `;
 
 export const Covid = styled.span`
   font-size: calc(20px + 3vmin);
   font-weight: 700;
   text-align: center;
+  margin-top: 30px;
 `;
 
 export const Country = styled.span`
@@ -18,7 +21,7 @@ export const Country = styled.span`
 
 export const Counters = styled.div`
   display: flex;
-  flex: 1;
+  flex: 0.5;
   width: 100%;
   justify-content: space-between;
 `;

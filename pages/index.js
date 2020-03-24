@@ -9,6 +9,8 @@ import ShareButton from "../components/Share/ShareButton";
 
 import { Covid, Country, Container, Counters, CounterContainer, ButtonContainer, TitleContainer, CountersContainer, CounterTitle, CounterValue, Image, ImageContainer, ImageTitle, ImageMessage, LoadingContainer, LoadingMessage } from '../styles';
 
+import { initGA, logPageView } from "../utils/analytics";
+
 const Loader = () => (
   <LoadingContainer>
     <Loading />
@@ -23,12 +25,21 @@ const Home = () => {
 
   useEffect(() => {
     fetchData();
+    getAnalytics();
   }, []);
 
   const fetchData = async () => {
     await axios.get("https://pomber.github.io/covid19/timeseries.json")
       .then(response => setBrazil(last(response.data.Brazil)))
   };
+
+  const getAnalytics = () => {
+     if (!window.GA_INITIALIZED) {
+       initGA();
+       window.GA_INITIALIZED = true;
+     }
+     logPageView();
+  }
 
   const handleAction = () => {
     setLoading(true);
@@ -66,9 +77,7 @@ const Home = () => {
           <ShareButton />
         </ImageContainer>
       ) : (
-          <ButtonContainer>
             <Button action={handleAction} />
-          </ButtonContainer>
         )}
     </Layout>
   )
